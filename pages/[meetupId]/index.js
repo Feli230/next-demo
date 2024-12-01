@@ -40,7 +40,7 @@ export async function getStaticPaths() {
     // find({}, { _id:1 }) we passed empty object {} cause we have no criteria means we need all the objects in the db
 
     return {
-        fallback: false,// it allows to generate some pages for the ids. true false 2 values jab false ho to 404 error dega agar m3 ko visit karoge kyun k niche humne add nai kiya wa, aur id ka mtbl hume sirf id chaiye
+        fallback: 'blocking',// it allows to generate some pages for the ids. true false 2 values jab false ho to 404 error dega agar m3 ko visit karoge kyun k niche humne add nai kiya wa, aur id ka mtbl hume sirf id chaiye
         paths: meetups.map(meetup => ({ params: {meetupId : meetup._id.toString()} }))
     }
 }
